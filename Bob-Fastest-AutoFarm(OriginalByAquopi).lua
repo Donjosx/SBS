@@ -25,7 +25,7 @@ fireclickdetector(game:GetService("Workspace").Lobby.Replica.ClickDetector)
 task.wait(.3)
 firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, workspace.Lobby.Teleport1, 0)
 task.wait(.1)
-for i = 1, 75000000 do
+for i = 1, 7500 do
 	game:GetService("ReplicatedStorage").Duplicate:FireServer(unpack({[1] = true}))
 end
 wait(2)
