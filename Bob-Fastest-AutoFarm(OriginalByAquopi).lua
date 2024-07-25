@@ -19,7 +19,8 @@ if not game:IsLoaded() then
 end
 repeat wait() until game.Players.LocalPlayer
 wait(0.25)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Giangplay/Slap_Battles/main/Slap_Battles.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Donjosx/SBS/main/Bob-Fastest-AutoFarm(OriginalByAquopi).lua"))()
+-- Idk why this script working EVEN i put the the source link into source link, weird:/
     ]])
 end
 
