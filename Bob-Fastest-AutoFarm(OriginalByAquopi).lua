@@ -1,5 +1,6 @@
 --//Do not steal credit, not give credit or this script will be the LAST script can be executed for solara executor user \\--
 --//Feel free to learning script by explore my script, give credit if you put my script in your hub, scripts...)
+if not game.Players.LocalPlayer.leaderstats.Slaps.Value >= 4000 then return end
 local teleportFunc = queueonteleport or queue_on_teleport or syn and syn.queue_on_teleport
 if teleportFunc then
     teleportFunc([[
