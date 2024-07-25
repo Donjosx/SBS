@@ -1,6 +1,17 @@
 --//Do not steal credit, not give credit or this script will be the LAST script can be executed for solara executor user \\--
 --//Feel free to learning script by explore my script, give credit if you put my script in your hub, scripts...)
-function Execute()
+local teleportFunc = queueonteleport or queue_on_teleport or syn and syn.queue_on_teleport
+if teleportFunc then
+    teleportFunc([[
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+end
+repeat task.wait() until game.Players.LocalPlayer
+wait(0.25)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Donjosx/SBS/main/Bob-Fastest-AutoFarm(OriginalByAquopi).lua"))()
+            ]])
+end
+
 if not game:IsLoaded() then
 	game.Loaded:Wait()
 end
@@ -52,7 +63,8 @@ local function TPReturner(placeId)
     end
 
     local num = 0
-    local foundServer = false  -- 
+    local foundServer = false 
+
     for i, v in pairs(Site.data) do
         local Possible = true
         ID = tostring(v.id)
@@ -75,7 +87,7 @@ local function TPReturner(placeId)
             end
             if Possible == true then
                 table.insert(AllIDs, ID)
-                foundServer = true  -- 
+                foundServer = true
                 wait()
                 pcall(function()
                     writefile("server-hop-temp.json", S_H:JSONEncode(AllIDs))
@@ -107,31 +119,3 @@ end
 
 
 module:Teleport(game.PlaceId)
-return module
-end
-
-local AutoExecuteFarm = queueonteleport or queue_on_teleport or (syn and syn.queue_on_teleport)
-
-if AutoExecuteFarm then
-    AutoExecuteFarm([[
-        -- Wait for the game to load
-        if not game:IsLoaded() then
-            game.Loaded:Wait()
-        end
-        
-        
-        wait(0.25)
-        
-        -- Load and execute the external script
-        local success, err = pcall(function()
-            Execute()
-	end)
-        
-        if not success then
-            warn("Failed to load the script: " .. err)
-        else
-            print("Script executed successfully!")
-        end
-    ]])
-end
-Execute()
