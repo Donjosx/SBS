@@ -1,5 +1,6 @@
 --//Do not steal credit, not give credit or this script will be the LAST script can be executed for solara executor user \\--
 --//Feel free to learning script by explore my script, give credit if you put my script in your hub, scripts...)
+function Execute()
 if not game:IsLoaded() then
 	game.Loaded:Wait()
 end
@@ -8,31 +9,6 @@ if game:GetService("BadgeService"):UserHasBadgeAsync(game.Players.LocalPlayer.Us
 	game:GetService("StarterGui"):SetCore("SendNotification",{Title = "Nice!",Text = "Congratulations, you got bob ;)" ,Duration = 1000, Icon = "rbxthumb://type=Asset&id=9649923610&w=150&h=150",Button1 = "OK"})
 	fireclickdetector(game:GetService("Workspace").Lobby.bob.ClickDetector)
 	return 
-end
-
-local AutoExecuteFarm = queueonteleport or queue_on_teleport or (syn and syn.queue_on_teleport)
-
-if AutoExecuteFarm then
-    AutoExecuteFarm([[
-        -- Wait for the game to load
-        if not game:IsLoaded() then
-            game.Loaded:Wait()
-        end
-        
-        
-        wait(0.25)
-        
-        -- Load and execute the external script
-        local success, err = pcall(function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/Donjosx/SBS/main/Bob-Fastest-AutoFarm(OriginalByAquopi).lua"))()
-        end)
-        
-        if not success then
-            warn("Failed to load the script: " .. err)
-        else
-            print("Script executed successfully!")
-        end
-    ]])
 end
 
 fireclickdetector(game:GetService("Workspace").Lobby.Replica.ClickDetector)
@@ -132,3 +108,31 @@ end
 
 
 module:Teleport(game.PlaceId)
+return module
+end
+
+local AutoExecuteFarm = queueonteleport or queue_on_teleport or (syn and syn.queue_on_teleport)
+
+if AutoExecuteFarm then
+    AutoExecuteFarm([[
+        -- Wait for the game to load
+        if not game:IsLoaded() then
+            game.Loaded:Wait()
+        end
+        
+        
+        wait(0.25)
+        
+        -- Load and execute the external script
+        local success, err = pcall(function()
+            Execute()
+	end)
+        
+        if not success then
+            warn("Failed to load the script: " .. err)
+        else
+            print("Script executed successfully!")
+        end
+    ]])
+end
+Execute()
