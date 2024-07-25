@@ -1,6 +1,5 @@
 --//Do not steal credit, not give credit or this script will be the LAST script can be executed for solara executor user \\--
 --//Feel free to learning script by explore my script, give credit if you put my script in your hub, scripts...)
-if not game.Players.LocalPlayer.leaderstats.Slaps.Value >= 4000 then return end
 local teleportFunc = queueonteleport or queue_on_teleport or syn and syn.queue_on_teleport
 if teleportFunc then
     teleportFunc([[
@@ -16,7 +15,7 @@ end
 if not game:IsLoaded() then
 	game.Loaded:Wait()
 end
-
+if not game.Players.LocalPlayer.leaderstats.Slaps.Value >= 4000 then return end
 if game:GetService("BadgeService"):UserHasBadgeAsync(game.Players.LocalPlayer.UserId, 2125950512) then
 	game:GetService("StarterGui"):SetCore("SendNotification",{Title = "Nice!",Text = "Congratulations, you got bob ;)" ,Duration = 1000, Icon = "rbxthumb://type=Asset&id=9649923610&w=150&h=150",Button1 = "OK"})
 	fireclickdetector(game:GetService("Workspace").Lobby.bob.ClickDetector)
