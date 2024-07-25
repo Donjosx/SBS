@@ -29,7 +29,7 @@ task.wait(.1)
 for i = 1, 75000 do
 	game:GetService("ReplicatedStorage").Duplicate:FireServer(unpack({[1] = true}))
 end
-wait(1)
+wait(2)
 --[[ This script isn't mine but idk how to create one so i use this instead ]]--
 local AllIDs = {}
 local foundAnything = ""
