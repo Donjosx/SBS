@@ -10,16 +10,31 @@ if game:GetService("BadgeService"):UserHasBadgeAsync(game.Players.LocalPlayer.Us
 	return 
 end
 
-local AutoExecuteFarm = queueonteleport or queue_on_teleport or syn and syn.queue_on_teleport
+local AutoExecuteFarm = queueonteleport or queue_on_teleport or (syn and syn.queue_on_teleport)
+
 if AutoExecuteFarm then
     AutoExecuteFarm([[
-if not game:IsLoaded() then
-    game.Loaded:Wait()
-end
-repeat wait() until game.Players.LocalPlayer
-wait(0.25)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Donjosx/SBS/main/Bob-Fastest-AutoFarm(OriginalByAquopi).lua"))()
--- Idk why this script working EVEN i put the the source link into source link, weird:/
+        -- Wait for the game to load
+        if not game:IsLoaded() then
+            game.Loaded:Wait()
+        end
+        
+        -- Wait until the LocalPlayer is available
+        repeat wait() until game.Players.LocalPlayer
+        
+        -- A short wait to ensure everything is ready
+        wait(0.25)
+        
+        -- Load and execute the external script
+        local success, err = pcall(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Donjosx/SBS/main/Bob-Fastest-AutoFarm(OriginalByAquopi).lua"))()
+        end)
+        
+        if not success then
+            warn("Failed to load the script: " .. err)
+        else
+            print("Script executed successfully!")
+        end
     ]])
 end
 
