@@ -15,7 +15,7 @@ end
 if not game:IsLoaded() then
 	game.Loaded:Wait()
 end
-if not game.Players.LocalPlayer.leaderstats.Slaps.Value >= 4000 then return end
+-- if not game.Players.LocalPlayer.leaderstats.Slaps.Value >= 4000 then return end
 if game:GetService("BadgeService"):UserHasBadgeAsync(game.Players.LocalPlayer.UserId, 2125950512) then
 	game:GetService("StarterGui"):SetCore("SendNotification",{Title = "Nice!",Text = "Congratulations, you got bob ;)" ,Duration = 1000, Icon = "rbxthumb://type=Asset&id=9649923610&w=150&h=150",Button1 = "OK"})
 	fireclickdetector(game:GetService("Workspace").Lobby.bob.ClickDetector)
