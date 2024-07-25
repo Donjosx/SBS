@@ -52,8 +52,7 @@ local function TPReturner(placeId)
     end
 
     local num = 0
-    local foundServer = false  -- Biến để theo dõi trạng thái tìm thấy server
-
+    local foundServer = false  -- 
     for i, v in pairs(Site.data) do
         local Possible = true
         ID = tostring(v.id)
@@ -76,7 +75,7 @@ local function TPReturner(placeId)
             end
             if Possible == true then
                 table.insert(AllIDs, ID)
-                foundServer = true  -- Đánh dấu là đã tìm thấy server
+                foundServer = true  -- 
                 wait()
                 pcall(function()
                     writefile("server-hop-temp.json", S_H:JSONEncode(AllIDs))
