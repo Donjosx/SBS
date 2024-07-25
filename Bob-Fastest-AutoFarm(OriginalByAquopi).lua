@@ -4,7 +4,6 @@ if not game:IsLoaded() then
 	game.Loaded:Wait()
 end
 
- loadstring(game:HttpGet"https://raw.githubusercontent.com/OMOScripts/Share-Scripts/main/Sb%7C%20Bypass%20Anti%20cheat")()
 if game:GetService("BadgeService"):UserHasBadgeAsync(game.Players.LocalPlayer.UserId, 2125950512) then
 	game:GetService("StarterGui"):SetCore("SendNotification",{Title = "Nice!",Text = "Congratulations, you got bob ;)" ,Duration = 1000, Icon = "rbxthumb://type=Asset&id=9649923610&w=150&h=150",Button1 = "OK"})
 	fireclickdetector(game:GetService("Workspace").Lobby.bob.ClickDetector)
@@ -25,10 +24,10 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Donjosx/SBS/main/Bob-
 end
 
 fireclickdetector(game:GetService("Workspace").Lobby.Replica.ClickDetector)
-task.wait()
+task.wait(.3)
 firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, workspace.Lobby.Teleport1, 0)
 task.wait(.1)
-for i = 1, 10000000 do
+for i = 1, 75000 do
 	game:GetService("ReplicatedStorage").Duplicate:FireServer(unpack({[1] = true}))
 end
 wait(1)
