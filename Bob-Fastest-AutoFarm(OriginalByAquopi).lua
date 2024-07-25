@@ -19,10 +19,7 @@ if AutoExecuteFarm then
             game.Loaded:Wait()
         end
         
-        -- Wait until the LocalPlayer is available
-        repeat wait() until game.Players.LocalPlayer
         
-        -- A short wait to ensure everything is ready
         wait(0.25)
         
         -- Load and execute the external script
